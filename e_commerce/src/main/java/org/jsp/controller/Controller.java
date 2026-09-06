@@ -82,4 +82,15 @@ public class Controller {
 	            service.deleteProduct(id)
 	    );
 	}
+	@PostMapping("/product")
+	public ResponseEntity<Product> saveSingleProduct(
+	        @RequestBody Product product) {
+
+	    return ResponseEntity.ok(service.saveSingleProduct(product));
+	}
+
+	@GetMapping("/products")
+	public ResponseEntity<List<Product>> getAllProducts() {
+	    return ResponseEntity.ok(service.getAllProducts());
+	}
 }

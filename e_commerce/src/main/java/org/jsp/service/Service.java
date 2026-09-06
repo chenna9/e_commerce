@@ -16,7 +16,16 @@ import org.springframework.data.domain.Sort;
 public class Service {
 	@Autowired
 	private ProductRepo productRepo;
-	
+	public Product saveSingleProduct(Product product) {
+
+	    return productRepo.save(product);
+	}
+
+
+	public List<Product> getAllProducts() {
+
+	    return productRepo.findAll();
+	}
 	public List<Product> saveProduct(List<Product> product) {
 		for (Product product1 : product) {
 		  product1.setCreatedDate(LocalDateTime.now());
